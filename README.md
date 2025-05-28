@@ -1,7 +1,7 @@
 # Screaming Raiden Bot for Wazuh
 Simple python bot to send Wazuh alerts to Telegram (Russia market-oriented (supports/will support in future KSC/SearchInform/etc.)).
 
-This fork has optimized code and implements readable alert generation by default (i.e. Kaspersky virus alerting in human-readable Markdown format).
+This fork has optimized code and implements nice alert generation by default (i.e. Kaspersky virus alerting in human-readable Markdown format).
 
 You can get decoders and rules for Kaspersky <a href=https://github.com/casperr2k/KSC_decoders_and_rules_for_Wazuh>here</a>
 
