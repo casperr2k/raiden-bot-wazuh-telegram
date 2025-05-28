@@ -5,6 +5,11 @@ This fork has optimized code and implements useful alert generation by default (
 
 You can get decoders and rules for Kaspersky <a href=https://github.com/tread-lightly/KSC_decoders_and_rules_for_Wazuh>here</a>
 
+<b>What's already done:</b>
+
+- Kaspersky alerts based on custom rules
+- Critical and high vulnerability alerts (using wazuh vulnerability-detector)
+
 More alerting rules to be added as soon as I parse the correct parameters.
 
 <h2>Installation:</h2>
