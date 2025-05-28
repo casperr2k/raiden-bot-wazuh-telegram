@@ -94,8 +94,8 @@ match rule_id:
                   f"*Имя хоста:* {data_host}\n\n" \
                   f"*IP источника:* {data_dstip}\n\n" \
                   f"*URL ресурса:* {KES_susURL}\n\n" \
-                  f"*Инициатор подключения:* {KES_susEXE}\n\n" \
-                  f"*Путь к .exe:* {KES_susPath}\n\n" 
+                  f"*Приложение:* {KES_susEXE}\n\n" \
+                  f"*Путь к объекту:* {KES_susPath}\n\n" 
     case _:
         pass
 
