@@ -87,7 +87,7 @@ match rule_id:
                   f"*Модуль KES:* {KES_module}\n\n" \
                   f"*Имя хоста:* {data_host}\n\n" \
                   f"*Пользователь:* {data_dstuser}\n\n" \
-                  f"*Приложение* {KES_p6}\n\n" 
+                  f"*Приложение:* {KES_p6}\n\n" 
     case "100040":
         message = f"*🚨 Kaspersky Alert 🚨*\n\n" \
                   f"*{data_fileaction}*\n\n" \
