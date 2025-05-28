@@ -40,6 +40,8 @@ KES_p7 = alert_json.get('data', {}).get('KES', {}).get('p7', "N/A")
 KES_p8 = alert_json.get('data', {}).get('KES', {}).get('p8', "N/A")
 KES_srcIP = alert_json.get('data', {}).get('KES', {}).get('srcIP', "N/A")
 KES_dstIP = alert_json.get('data', {}).get('KES', {}).get('dstIP', "N/A")
+KES_susURL = alert_json.get('data', {}).get('KES', {}).get('susURL', "N/A")
+data_dstip = alert_json.get('data', {}).get('dstip', "N/A")
 data_dstuser = alert_json.get('data', {}).get('dstuser', "N/A")
 data_fileaction = alert_json.get('data', {}).get('fileaction', "N/A")
 
@@ -61,6 +63,14 @@ match rule_id:
                   f"*Пользователь:* {KES_p7}\n\n" \
                   f"*ID объекта:* {KES_p5}\n\n" \
                   f"*Путь к объекту:* {data_dstuser}\n\n" 
+    case "100009":
+        message = f"*🚨 Kaspersky Alert 🚨*\n\n" \
+                  f"*{data_fileaction}*\n\n" \
+                  f"*Модуль KES:* {KES_module}\n\n" \
+                  f"*Имя хоста:* {data_host}\n\n" \
+                  f"*Пользователь:* {KES_p7}\n\n" \
+                  f"*ID объекта:* {KES_p5}\n\n" \
+                  f"*Путь к объекту:* {data_dstuser}\n\n"
     case "100011":
         message = f"*🚨 Kaspersky Alert 🚨*\n\n" \
                   f"*{data_fileaction}*\n\n" \
@@ -76,6 +86,12 @@ match rule_id:
                   f"*Имя хоста:* {data_host}\n\n" \
                   f"*Пользователь:* {data_dstuser}\n\n" \
                   f"*Приложение* {KES_p6}\n\n" 
+    case "100040":
+        message = f"*🚨 Kaspersky Alert 🚨*\n\n" \
+                  f"*{data_fileaction}*\n\n" \
+                  f"*Имя хоста:* {data_host}\n\n" \
+                  f"*IP источника:* {data_dstip}\n\n" \
+                  f"*URL ресурса:* {KES_susURL}\n\n" 
     case _:
         pass
 
