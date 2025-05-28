@@ -41,6 +41,8 @@ KES_p8 = alert_json.get('data', {}).get('KES', {}).get('p8', "N/A")
 KES_srcIP = alert_json.get('data', {}).get('KES', {}).get('srcIP', "N/A")
 KES_dstIP = alert_json.get('data', {}).get('KES', {}).get('dstIP', "N/A")
 KES_susURL = alert_json.get('data', {}).get('KES', {}).get('susURL', "N/A")
+KES_susPath = alert_json.get('data', {}).get('KES', {}).get('susPath', "N/A")
+KES_susEXE = alert_json.get('data', {}).get('KES', {}).get('susEXE', "N/A")
 data_dstip = alert_json.get('data', {}).get('dstip', "N/A")
 data_dstuser = alert_json.get('data', {}).get('dstuser', "N/A")
 data_fileaction = alert_json.get('data', {}).get('fileaction', "N/A")
@@ -91,7 +93,9 @@ match rule_id:
                   f"*{data_fileaction}*\n\n" \
                   f"*Имя хоста:* {data_host}\n\n" \
                   f"*IP источника:* {data_dstip}\n\n" \
-                  f"*URL ресурса:* {KES_susURL}\n\n" 
+                  f"*URL ресурса:* {KES_susURL}\n\n" \
+                  f"*Инициатор подключения:* {KES_susEXE}\n\n" \
+                  f"*Путь к .exe:* {KES_susPath}\n\n" 
     case _:
         pass
 
