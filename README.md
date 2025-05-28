@@ -18,15 +18,15 @@ More alerting rules to be added as soon as I parse the correct parameters.
 
 2. Install requirements with this command :
 ```
-#apt install python3-requests -y
+# apt install python3-requests -y
 ```
 
 3. Insert your **CHAT ID** to **custom-raiden-bot.py**. Copy **custom-raiden-bot** and **custom-raiden-bot.py** to **/var/ossec/integrations/**
 
 4. Set correct permission to those files:
 ```
-#chown root:wazuh /var/ossec/integrations/custom-raiden-bot*
-#chmod 750 /var/ossec/integrations/custom-raiden-bot*
+# chown root:wazuh /var/ossec/integrations/custom-raiden-bot*
+# chmod 750 /var/ossec/integrations/custom-raiden-bot*
 ```
 
 5. Insert your API KEY to these line and copy those lines to **/var/ossec/etc/ossec.conf**
@@ -40,5 +40,5 @@ More alerting rules to be added as soon as I parse the correct parameters.
 ```
 6. Restart wazuh server
 ```
-#systemctl restart wazuh-manager
+# systemctl restart wazuh-manager
 ```
