@@ -16,9 +16,9 @@ More alerting rules to be added as soon as I parse the correct parameters.
 
 1. First requirement is you should have working Telegram bot with **API KEY** and **CHAT ID** and also fully working Wazuh server.
 
-2. Check reqirements with this command :
+2. Install requirements with this command :
 ```
-#pip install requests
+#apt install ptrhon3-requests -y
 ```
 
 3. Insert your **CHAT ID** to **custom-raiden-bot.py**. Copy **custom-raiden-bot** and **custom-raiden-bot.py** to **/var/ossec/integrations/**
