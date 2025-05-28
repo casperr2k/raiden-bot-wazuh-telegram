@@ -5,6 +5,8 @@ This fork has optimized code and implements useful alert generation by default (
 
 More alerting rules to be added as soon as I parse the correct parameters.
 
+<h2>Installation:</h2>
+
 1. First requirement is you should have working Telegram bot with **API KEY** and **CHAT ID** and also fully working Wazuh server.
 
 2. Check reqirements with this command :
