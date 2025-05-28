@@ -3,7 +3,7 @@ Send wazuh alert to telegram by telegram bot (Markdown-enabled, Russia market-or
 
 This fork has optimized code and implements useful alert generation by default (i.e. Kaspersky virus alerting in human-readable Markdown format).
 
-You can get decoders and rules for Kaspersky <a href=https://github.com/tread-lightly/KSC_decoders_and_rules_for_Wazuh>here</a>
+You can get decoders and rules for Kaspersky <a href=https://github.com/casperr2k/KSC_decoders_and_rules_for_Wazuh>here</a>
 
 <b>What's already done:</b>
 
