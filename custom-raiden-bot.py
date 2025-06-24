@@ -47,6 +47,19 @@ data_dstip = alert_json.get('data', {}).get('dstip', "N/A")
 data_dstuser = alert_json.get('data', {}).get('dstuser', "N/A")
 data_fileaction = alert_json.get('data', {}).get('fileaction', "N/A")
 
+# AlertCenter variable section
+alert_ID = alert_json.get('data', {}).get('AlertID', "N/A")
+alert_group_ID = alert_json.get('data', {}).get('AlertGroupID', "N/A")
+alert_name = alert_json.get('data', {}).get('AlertName', "N/A")
+intercept_user = alert_json.get('data', {}).get('InterceptUser', "N/A")
+incident_ID = alert_json.get('data', {}).get('IncidentID', "N/A")
+intercept_IP = alert_json.get('data', {}).get('InterceptIP', "N/A")
+intercept_PCname = alert_json.get('data', {}).get('InterceptPCName', "N/A")
+document_name = alert_json.get('data', {}).get('DocumentName', "N/A")
+document_ext = alert_json.get('data', {}).get('DocumentExt', "N/A")
+document_size = alert_json.get('data', {}).get('DocumentSize', "N/A")
+to_addr = alert_json.get('data', {}).get('to_addr', "N/A")
+
 # Vulnerabilities variable section
 vuln_CVE = alert_json.get('data', {}).get('vulnerability', {}).get('CVE', "N/A")
 vuln_package = alert_json.get('data', {}).get('vulnerability', {}).get('package', {}).get('name', "N/A")
@@ -99,16 +112,57 @@ match rule_id:
     case _:
         pass
 
+# Generate message based on AlertCenter rule ID
+match alert_group_ID:
+    case "13":
+        message = f"*🚨 SearchInform AlertCenter Alert 🚨*\n\n" \
+                  f"*{alert_name} обнаружено на *{intercept_PCname}\n\n" \
+                  f"*Отправитель:* {intercept_user}\n\n" \
+                  f"*Получатель:* {to_addr}\n\n" \
+                  f"*Имя документа:* {document_name}\n\n" \
+                  f"*Расширение:* {document_ext}\n\n" \
+                  f"*Размер:* {document_size}\n\n" \
+                  f"*ID инцидента:* {incident_ID}\n\n"
+    case "15":
+        message = f"*🚨 SearchInform AlertCenter Alert 🚨*\n\n" \
+                  f"*{alert_name} обнаружено на *{intercept_PCname}\n\n" \
+                  f"*Отправитель:* {intercept_user}\n\n" \
+                  f"*Получатель:* {to_addr}\n\n" \
+                  f"*Имя документа:* {document_name}\n\n" \
+                  f"*Расширение:* {document_ext}\n\n" \
+                  f"*Размер:* {document_size}\n\n" \
+                  f"*ID инцидента:* {incident_ID}\n\n"
+    case "21":
+        message = f"*🚨 SearchInform AlertCenter Alert 🚨*\n\n" \
+                  f"*{alert_name} обнаружено на *{intercept_PCname}\n\n" \
+                  f"*Отправитель:* {intercept_user}\n\n" \
+                  f"*Получатель:* {to_addr}\n\n" \
+                  f"*Имя документа:* {document_name}\n\n" \
+                  f"*Расширение:* {document_ext}\n\n" \
+                  f"*Размер:* {document_size}\n\n" \
+                  f"*ID инцидента:* {incident_ID}\n\n"
+    case "29":
+        message = f"*🚨 SearchInform AlertCenter Alert 🚨*\n\n" \
+                  f"*{alert_name} обнаружено на *{intercept_PCname}\n\n" \
+                  f"*Отправитель:* {intercept_user}\n\n" \
+                  f"*Получатель:* {to_addr}\n\n" \
+                  f"*Имя документа:* {document_name}\n\n" \
+                  f"*Расширение:* {document_ext}\n\n" \
+                  f"*Размер:* {document_size}\n\n" \
+                  f"*ID инцидента:* {incident_ID}\n\n"
+    case _:
+        pass
+
 # Generate message based on vuln severity
 match vuln_severity:
-    case "Critical":
+    case 'Critical':
         message = f"*🚨 Critical Vulnerability Alert 🚨*\n\n" \
                   f"*Критическая уязвимость обнаружена на *{agent}\n\n" \
                   f"*CVE:* {vuln_CVE}\n\n" \
                   f"*Уязвимый модуль:* {vuln_package} {vuln_version}\n\n" \
                   f"*Описание:* {vuln_title}\n\n" \
                   f"*Подробнее:* {vuln_reference}\n\n" 
-    case "High":
+    case 'High':
         message = f"*🚨 High Vulnerability Alert 🚨*\n\n" \
                   f"*Уязвимость высокой степени обнаружена на *{agent}\n\n" \
                   f"*CVE:* {vuln_CVE}\n\n" \
