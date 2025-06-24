@@ -11,6 +11,7 @@ You can get decoders and rules for Kaspersky <a href=https://github.com/casperr2
 <b>What's already done:</b>
 
 - Kaspersky alerts based on custom rules
+- AlertCenter alerts based on custom decoder+rules
 - Critical and high vulnerability alerts (using wazuh vulnerability-detector)
 - Markdown output instead of JSON
 - Easy-readable structured code base
