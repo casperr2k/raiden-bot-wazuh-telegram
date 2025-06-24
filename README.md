@@ -46,4 +46,6 @@ More alerting rules to be added as soon as I parse the correct parameters.
 ```
 # systemctl restart wazuh-manager
 ```
+<h2>Picture :3</h2>
+
 ![IMG_3623](https://github.com/user-attachments/assets/5a3b1812-ae1a-4beb-a9cb-c316eacf4e5e)
