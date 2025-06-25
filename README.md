@@ -6,6 +6,8 @@ This fork has optimized code and implements nice alert generation by default (i.
 
 You can get decoders and rules for Kaspersky <a href=https://github.com/casperr2k/KSC_decoders_and_rules_for_Wazuh>here</a>
 
+You can get decoders and rules for AlertCenter <a href=https://github.com/casperr2k/wazuh-alertcenter-decoder-and-rules>here</a>
+
 <b>What's already done:</b>
 
 - Kaspersky alerts based on custom rules
