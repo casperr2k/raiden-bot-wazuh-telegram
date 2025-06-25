@@ -6,7 +6,7 @@ import requests
 from requests.auth import HTTPBasicAuth
 
 # CHAT_ID is your Telegram chat ID (group or personal), starts with -
-CHAT_ID="-CHAT ID GOES HERE"  
+CHAT_ID="-<CHAT_ID>"  
 
 # Read configuration parameters
 alert_file = open(sys.argv[1])
