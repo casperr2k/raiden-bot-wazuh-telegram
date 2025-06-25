@@ -130,7 +130,7 @@ match rule_id:
 match alert_group_ID:
     case "13":
         message = f"*🚨 AlertCenter Incident 🚨*\n\n" \
-                  f"*{alert_name} обнаружено на *{intercept_PCname}\n\n" \
+                  f"*{alert_name} обнаружено на {intercept_PCname}*\n\n" \
                   f"*Отправитель:* {intercept_user}\n\n" \
                   f"*Получатель:* {to_addr}\n\n" \
                   f"*Имя документа:* {document_name}\n\n" \
@@ -140,7 +140,7 @@ match alert_group_ID:
                   f"#alertcenter #personalmail \n\n"
     case "15":
         message = f"*🚨 AlertCenter Incident 🚨*\n\n" \
-                  f"*{alert_name} обнаружено на *{intercept_PCname}\n\n" \
+                  f"*{alert_name} обнаружено на {intercept_PCname}*\n\n" \
                   f"*Отправитель:* {intercept_user}\n\n" \
                   f"*Получатель:* {to_addr}\n\n" \
                   f"*Имя документа:* {document_name}\n\n" \
@@ -150,7 +150,7 @@ match alert_group_ID:
                   f"#alertcenter #personalmail \n\n"
     case "21":
         message = f"*🚨 AlertCenter Incident 🚨*\n\n" \
-                  f"*{alert_name} обнаружено на *{intercept_PCname}\n\n" \
+                  f"*{alert_name} обнаружено на {intercept_PCname}*\n\n" \
                   f"*Отправитель:* {intercept_user}\n\n" \
                   f"*Получатель:* {to_addr}\n\n" \
                   f"*Имя документа:* {document_name}\n\n" \
@@ -160,7 +160,7 @@ match alert_group_ID:
                   f"#alertcenter #messengers \n\n"
     case "29":
         message = f"*🚨 AlertCenter Incident 🚨*\n\n" \
-                  f"*{alert_name} обнаружено на *{intercept_PCname}\n\n" \
+                  f"*{alert_name} обнаружено на {intercept_PCname}*\n\n" \
                   f"*Отправитель:* {intercept_user}\n\n" \
                   f"*Получатель:* {to_addr}\n\n" \
                   f"*Имя документа:* {document_name}\n\n" \
@@ -170,7 +170,7 @@ match alert_group_ID:
                   f"#alertcenter #cloud \n\n"
     case "34":
         message = f"*🚨 AlertCenter Incident 🚨*\n\n" \
-                  f"*{alert_name} обнаружено на *{intercept_PCname}\n\n" \
+                  f"*{alert_name} обнаружено на {intercept_PCname}*\n\n" \
                   f"*Отправитель:* {intercept_user}\n\n" \
                   f"*Получатель:* {to_addr}\n\n" \
                   f"*Имя документа:* {document_name}\n\n" \
@@ -185,7 +185,7 @@ match alert_group_ID:
 match vuln_severity:
     case 'Critical':
         message = f"*🚨 Critical Vulnerability Alert 🚨*\n\n" \
-                  f"*Критическая уязвимость обнаружена на *{agent}\n\n" \
+                  f"*Критическая уязвимость обнаружена на {agent}*\n\n" \
                   f"*CVE:* {vuln_CVE}\n\n" \
                   f"*Уязвимый модуль:* {vuln_package} {vuln_version}\n\n" \
                   f"*Описание:* {vuln_title}\n\n" \
@@ -193,7 +193,7 @@ match vuln_severity:
                   f"#vulnerability #critical \n\n"
     case 'High':
         message = f"*🚨 High Vulnerability Alert 🚨*\n\n" \
-                  f"*Уязвимость высокой степени обнаружена на *{agent}\n\n" \
+                  f"*Уязвимость высокой степени обнаружена на {agent}*\n\n" \
                   f"*CVE:* {vuln_CVE}\n\n" \
                   f"*Уязвимый модуль:* {vuln_package} {vuln_version}\n\n" \
                   f"*Описание:* {vuln_title}\n\n" \
