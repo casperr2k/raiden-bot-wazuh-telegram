@@ -12,6 +12,7 @@ You can get decoders and rules for Kaspersky <a href=https://github.com/casperr2
 - AlertCenter alerts based on custom decoder+rules
 - Critical and high vulnerability alerts (using wazuh vulnerability-detector)
 - Markdown output instead of JSON
+- Telegram hashtags for each type of event
 - Easy-readable structured code base
 
 More alerting rules to be added as soon as I parse the correct parameters.
