@@ -80,14 +80,23 @@ match rule_id:
                   f"*Путь к объекту:* {data_dstuser}\n\n" \
                   f"#kaspersky #virus \n\n"
     case "100009":
-        message = f"*🚨 Kaspersky Alert 🚨*\n\n" \
-                  f"*{data_fileaction}*\n\n" \
-                  f"*Модуль KES:* {KES_module}\n\n" \
-                  f"*Имя хоста:* {data_host}\n\n" \
-                  f"*Пользователь:* {KES_p7}\n\n" \
-                  f"*ID объекта:* {KES_p5}\n\n" \
-                  f"*Путь к объекту:* {data_dstuser}\n\n" \
-                  f"#kaspersky #virus \n\n"        
+        if "веб-угроз" in KES_module:
+            message = f"*🚨 Kaspersky Alert 🚨*\n\n" \
+                      f"*{data_fileaction}*\n\n" \
+                      f"*Модуль KES:* {KES_module}\n\n" \
+                      f"*Имя хоста:* {data_host}\n\n" \
+                      f"*Пользователь:* {KES_p7}\n\n" \
+                      f"*URL:* {KES_p5}\n\n" \
+                      f"#kaspersky #webthreat \n\n"
+        else:
+            message = f"*🚨 Kaspersky Alert 🚨*\n\n" \
+                      f"*{data_fileaction}*\n\n" \
+                      f"*Модуль KES:* {KES_module}\n\n" \
+                      f"*Имя хоста:* {data_host}\n\n" \
+                      f"*Пользователь:* {KES_p7}\n\n" \
+                      f"*ID объекта:* {KES_p5}\n\n" \
+                      f"*Путь к объекту:* {data_dstuser}\n\n" \
+                      f"#kaspersky #virus \n\n"        
     case "100011":
         message = f"*🚨 Kaspersky Alert 🚨*\n\n" \
                   f"*{data_fileaction}*\n\n" \
