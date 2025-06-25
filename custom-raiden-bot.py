@@ -112,7 +112,7 @@ match rule_id:
     case _:
         pass
 
-# Generate message based on AlertCenter rule ID
+# Generate message based on AlertCenter alert group ID
 match alert_group_ID:
     case "13":
         message = f"*🚨 AlertCenter Incident 🚨*\n\n" \
