@@ -115,7 +115,7 @@ match rule_id:
 # Generate message based on AlertCenter rule ID
 match alert_group_ID:
     case "13":
-        message = f"*🚨 AlertCenter Alert 🚨*\n\n" \
+        message = f"*🚨 AlertCenter Incident 🚨*\n\n" \
                   f"*{alert_name} обнаружено на *{intercept_PCname}\n\n" \
                   f"*Отправитель:* {intercept_user}\n\n" \
                   f"*Получатель:* {to_addr}\n\n" \
@@ -124,7 +124,7 @@ match alert_group_ID:
                   f"*Размер:* {document_size}\n\n" \
                   f"*ID инцидента:* {incident_ID}\n\n"
     case "15":
-        message = f"*🚨 AlertCenter Alert 🚨*\n\n" \
+        message = f"*🚨 AlertCenter Incident 🚨*\n\n" \
                   f"*{alert_name} обнаружено на *{intercept_PCname}\n\n" \
                   f"*Отправитель:* {intercept_user}\n\n" \
                   f"*Получатель:* {to_addr}\n\n" \
@@ -133,7 +133,7 @@ match alert_group_ID:
                   f"*Размер:* {document_size}\n\n" \
                   f"*ID инцидента:* {incident_ID}\n\n"
     case "21":
-        message = f"*🚨 AlertCenter Alert 🚨*\n\n" \
+        message = f"*🚨 AlertCenter Incident 🚨*\n\n" \
                   f"*{alert_name} обнаружено на *{intercept_PCname}\n\n" \
                   f"*Отправитель:* {intercept_user}\n\n" \
                   f"*Получатель:* {to_addr}\n\n" \
@@ -142,7 +142,16 @@ match alert_group_ID:
                   f"*Размер:* {document_size}\n\n" \
                   f"*ID инцидента:* {incident_ID}\n\n"
     case "29":
-        message = f"*🚨 AlertCenter Alert 🚨*\n\n" \
+        message = f"*🚨 AlertCenter Incident 🚨*\n\n" \
+                  f"*{alert_name} обнаружено на *{intercept_PCname}\n\n" \
+                  f"*Отправитель:* {intercept_user}\n\n" \
+                  f"*Получатель:* {to_addr}\n\n" \
+                  f"*Имя документа:* {document_name}\n\n" \
+                  f"*Расширение:* {document_ext}\n\n" \
+                  f"*Размер:* {document_size}\n\n" \
+                  f"*ID инцидента:* {incident_ID}\n\n"
+    case "34":
+        message = f"*🚨 AlertCenter Incident 🚨*\n\n" \
                   f"*{alert_name} обнаружено на *{intercept_PCname}\n\n" \
                   f"*Отправитель:* {intercept_user}\n\n" \
                   f"*Получатель:* {to_addr}\n\n" \
