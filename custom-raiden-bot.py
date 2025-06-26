@@ -103,45 +103,56 @@ match rule_id:
                   f"*❗ {data_fileaction} ❗*\n\n" \
                   f"*🔧 Модуль KES:*\n\n" \
                   f"└ {KES_module}\n\n" \
-                  f"*💻 Имя хоста:*\n\n" \
+                  f"*💻 Имя хоста:*\n" \
                   f"└ {data_host}\n\n" \
-                  f"*🐱 Пользователь:*\n\n" \
+                  f"*🐱 Пользователь:*\n" \
                   f"└ {KES_p7}\n\n" \
-                  f"*👾 ID объекта:*\n\n" \
+                  f"*👾 ID объекта:*\n" \
                   f"└ {KES_p5}\n\n" \
-                  f"*📁 Путь к объекту:*\n\n" \
+                  f"*📁 Путь к объекту:*\n" \
                   f"└ {data_dstuser}\n\n" \
                   f"#kaspersky #virus \n\n"
     case "100011":
         message = f"*🚨 Kaspersky Alert 🚨*\n\n" \
                   f"*❗ {data_fileaction} ❗*\n\n" \
-                  f"*🔧 Модуль KES:*\n\n" \
+                  f"*🔧 Модуль KES:*\n" \
                   f"└ {KES_module}\n\n" \
-                  f"*💻 Имя хоста:*\n\n" \
+                  f"*💻 Имя хоста:*\n" \
                   f"└ {data_host}\n\n" \
-                  f"*👾 Тип атаки:*\n\n" \
+                  f"*👾 Тип атаки:*\n" \
                   f"└ {KES_p1}\n\n" \
-                  f"*🌍 Src IP:*\n\n" \
+                  f"*🌍 Src IP:*\n" \
                   f"└ {KES_srcIP}\n\n" \
-                  f"*🌏 Dst IP:*\n\n" \
+                  f"*🌏 Dst IP:*\n" \
                   f"└ {KES_dstIP}\n\n" \
                   f"#kaspersky #netattack \n\n"
     case "100012":
         message = f"*🚨 Kaspersky Alert 🚨*\n\n" \
-                  f"*{data_fileaction}*\n\n" \
-                  f"*Модуль KES:* {KES_module}\n\n" \
-                  f"*Имя хоста:* {data_host}\n\n" \
-                  f"*Пользователь:* {data_dstuser}\n\n" \
-                  f"*Приложение:* {KES_p6}\n\n" \
+                  f"*❗ {data_fileaction} ❗*\n\n" \
+                  f"*🔧 Модуль KES:*\n" \
+                  f"└ {KES_module}\n\n" \
+                  f"*💻 Имя хоста:*\n" \
+                  f"└ {data_host}\n\n" \
+                  f"*🐱 Пользователь:*\n" \
+                  f"└ {KES_p7}\n\n" \
+                  f"*📱 Приложение:* {KES_p6}\n" \
+                  f"*└ {KES_p6}\n\n" \
                   f"#kaspersky #maliciousapp \n\n"
     case "100040":
         message = f"*🚨 Kaspersky Alert 🚨*\n\n" \
-                  f"*{data_fileaction}*\n\n" \
-                  f"*Имя хоста:* {data_host}\n\n" \
-                  f"*IP источника:* {data_dstip}\n\n" \
-                  f"*URL ресурса:* {KES_susURL}\n\n" \
-                  f"*Приложение:* {KES_susEXE}\n\n" \
-                  f"*Путь к объекту:* {KES_susPath}\n\n" \
+                  f"*❗ {data_fileaction} ❗*\n\n" \
+                  f"*🔧 Модуль KES:*\n" \
+                  f"└ {KES_module}\n\n" \
+                  f"*💻 Имя хоста:*\n" \
+                  f"└ {data_host}\n\n" \
+                  f"*🌍 IP источника:*\n" \
+                  f"└ {data_dstip}\n\n" \  
+                  f"*🔗 URL ресурса:*\n" \
+                  f"└ {KES_susURL}\n\n" \ 
+                  f"📱 Приложение:* {KES_susEXE}\n" \
+                  f"└ {KES_susEXE}\n\n" \
+                  f"*📁 Путь к объекту:*\n" \
+                  f"└ {KES_susPath}\n\n" \
                   f"#kaspersky #connblocked \n\n"    
     case _:
         pass
