@@ -71,40 +71,60 @@ vuln_title = alert_json.get('data', {}).get('vulnerability', {}).get('title', "N
 # Generate message based on KES rule ID
 match rule_id:
     case "100003":
-        message = f"*🚨 Kaspersky Alert 🚨*\n\n" \
-                  f"*{data_fileaction}*\n\n" \
-                  f"*Модуль KES:* {KES_module}\n\n" \
-                  f"*Имя хоста:* {data_host}\n\n" \
-                  f"*Пользователь:* {KES_p7}\n\n" \
-                  f"*ID объекта:* {KES_p5}\n\n" \
-                  f"*Путь к объекту:* {data_dstuser}\n\n" \
-                  f"#kaspersky #virus \n\n"
-    case "100009":
         if "веб-угроз" in KES_module:
             message = f"*🚨 Kaspersky Alert 🚨*\n\n" \
-                      f"*{data_fileaction}*\n\n" \
-                      f"*Модуль KES:* {KES_module}\n\n" \
-                      f"*Имя хоста:* {data_host}\n\n" \
-                      f"*Пользователь:* {KES_p7}\n\n" \
-                      f"*URL:* {KES_p5}\n\n" \
+                      f"*❗ {data_fileaction}* ❗\n\n" \
+                      f"*🔧 Модуль KES:*\n" \
+                      f"└ {KES_module}\n\n" \
+                      f"*💻 Имя хоста:*\n" \
+                      f"└ {data_host}\n\n" \
+                      f"*🐱 Пользователь:*\n" \
+                      f"└ {KES_p7}\n\n" \
+                      f"*🔗 URL:*\n" \
+                      f"└ {KES_p5}\n\n" \
                       f"#kaspersky #webthreat \n\n"
         else:
             message = f"*🚨 Kaspersky Alert 🚨*\n\n" \
-                      f"*{data_fileaction}*\n\n" \
-                      f"*Модуль KES:* {KES_module}\n\n" \
-                      f"*Имя хоста:* {data_host}\n\n" \
-                      f"*Пользователь:* {KES_p7}\n\n" \
-                      f"*ID объекта:* {KES_p5}\n\n" \
-                      f"*Путь к объекту:* {data_dstuser}\n\n" \
-                      f"#kaspersky #virus \n\n"        
+                      f"*❗ {data_fileaction} ❗*\n\n" \
+                      f"*🔧 Модуль KES:*\n" \
+                      f"└ {KES_module}\n\n" \
+                      f"*💻 Имя хоста:*\n" \
+                      f"└ {data_host}\n\n" \
+                      f"*🐱 Пользователь:*\n" \
+                      f"└ {KES_p7}\n\n" \
+                      f"*👾 ID объекта:*\n" \
+                      f"└ {KES_p5}\n\n" \
+                      f"*📁 Путь к объекту:*\n" \
+                      f"└ {data_dstuser}\n\n" \
+                      f"#kaspersky #virus \n\n"
+
+    case "100009":
+        message = f"*🚨 Kaspersky Alert 🚨*\n\n" \
+                  f"*❗ {data_fileaction} ❗*\n\n" \
+                  f"*🔧 Модуль KES:*\n\n" \
+                  f"└ {KES_module}\n\n" \
+                  f"*💻 Имя хоста:*\n\n" \
+                  f"└ {data_host}\n\n" \
+                  f"*🐱 Пользователь:*\n\n" \
+                  f"└ {KES_p7}\n\n" \
+                  f"*👾 ID объекта:*\n\n" \
+                  f"└ {KES_p5}\n\n" \
+                  f"*📁 Путь к объекту:*\n\n" \
+                  f"└ {data_dstuser}\n\n" \
+                  f"#kaspersky #virus \n\n"
     case "100011":
         message = f"*🚨 Kaspersky Alert 🚨*\n\n" \
-                  f"*{data_fileaction}*\n\n" \
-                  f"*Модуль KES:* {KES_module}\n\n" \
-                  f"*Имя хоста:* {data_host}\n\n" \
-                  f"*Тип атаки:* {KES_p1}\n\n" \
-                  f"*Src IP:* {KES_srcIP}\n\n" \
-                  f"*Dst IP:* {KES_dstIP}\n\n" \
+                  f"*❗ {data_fileaction} ❗*\n\n" \
+                  f"*🔧 Модуль KES:*\n\n" \
+                  f"└ {KES_module}\n\n" \
+                  f"*💻 Имя хоста:*\n\n" \
+                  f"└ {data_host}\n\n" \
+                  f"*👾 Тип атаки:*\n\n" \
+                  f"└ {KES_p1}\n\n" \
+                  f"*🌍 Src IP:*\n\n" \
+                  f"└ {KES_srcIP}\n\n" \
+                  f"*🌏 Dst IP:*\n\n" \
+                  f"└ {KES_dstIP}\n\n" \
                   f"#kaspersky #netattack \n\n"
     case "100012":
         message = f"*🚨 Kaspersky Alert 🚨*\n\n" \
@@ -130,53 +150,93 @@ match rule_id:
 match alert_group_ID:
     case "13":
         message = f"*🚨 AlertCenter Incident 🚨*\n\n" \
-                  f"*{alert_name} обнаружено на {intercept_PCname}*\n\n" \
-                  f"*Отправитель:* {intercept_user}\n\n" \
-                  f"*Получатель:* {to_addr}\n\n" \
-                  f"*Имя документа:* {document_name}\n\n" \
-                  f"*Расширение:* {document_ext}\n\n" \
-                  f"*Размер:* {document_size}\n\n" \
-                  f"*ID инцидента:* {incident_ID}\n\n" \
+                  f"*❗ {alert_name} обнаружено ❗*\n\n" \
+                  f"*💻 Имя хоста:*\n" \
+                  f"└ {intercept_PCname_caps}\n\n" \
+                  f"*📧 Отправитель:*\n" \
+                  f"└ {intercept_user} \n\n" \
+                  f"*📨 Получатель:*\n" \
+                  f"└ {to_addr}\n\n" \
+                  f"*📄 Имя документа:*\n" \
+                  f"└ {document_name}\n\n" \
+                  f"*💠 Расширение:*\n" \
+                  f"└ {document_ext}\n\n" \
+                  f"*↗️ Размер:*\n" \
+                  f"└ {document_size}\n\n" \
+                  f"*🆔 ID инцидента:*\n" \
+                  f"└ {incident_ID}\n\n" \
                   f"#alertcenter #personalmail \n\n"
     case "15":
         message = f"*🚨 AlertCenter Incident 🚨*\n\n" \
-                  f"*{alert_name} обнаружено на {intercept_PCname}*\n\n" \
-                  f"*Отправитель:* {intercept_user}\n\n" \
-                  f"*Получатель:* {to_addr}\n\n" \
-                  f"*Имя документа:* {document_name}\n\n" \
-                  f"*Расширение:* {document_ext}\n\n" \
-                  f"*Размер:* {document_size}\n\n" \
-                  f"*ID инцидента:* {incident_ID}\n\n" \
+                  f"*❗ {alert_name} обнаружено ❗*\n\n" \
+                  f"*💻 Имя хоста:*\n" \
+                  f"└ {intercept_PCname_caps}\n\n" \
+                  f"*📧 Отправитель:*\n" \
+                  f"└ {intercept_user} \n\n" \
+                  f"*📨 Получатель:*\n" \
+                  f"└ {to_addr}\n\n" \
+                  f"*📄 Имя документа:*\n" \
+                  f"└ {document_name}\n\n" \
+                  f"*💠 Расширение:*\n" \
+                  f"└ {document_ext}\n\n" \
+                  f"*↗️ Размер:*\n" \
+                  f"└ {document_size}\n\n" \
+                  f"*🆔 ID инцидента:*\n" \
+                  f"└ {incident_ID}\n\n" \
                   f"#alertcenter #personalmail \n\n"
     case "21":
         message = f"*🚨 AlertCenter Incident 🚨*\n\n" \
-                  f"*{alert_name} обнаружено на {intercept_PCname}*\n\n" \
-                  f"*Отправитель:* {intercept_user}\n\n" \
-                  f"*Получатель:* {to_addr}\n\n" \
-                  f"*Имя документа:* {document_name}\n\n" \
-                  f"*Расширение:* {document_ext}\n\n" \
-                  f"*Размер:* {document_size}\n\n" \
-                  f"*ID инцидента:* {incident_ID}\n\n" \
+                  f"*❗ {alert_name} обнаружено ❗*\n\n" \
+                  f"*💻 Имя хоста:*\n" \
+                  f"└ {intercept_PCname_caps}\n\n" \
+                  f"*📧 Отправитель:*\n" \
+                  f"└ {intercept_user} \n\n" \
+                  f"*📨 Получатель:*\n" \
+                  f"└ {to_addr}\n\n" \
+                  f"*📄 Имя документа:*\n" \
+                  f"└ {document_name}\n\n" \
+                  f"*💠 Расширение:*\n" \
+                  f"└ {document_ext}\n\n" \
+                  f"*↗️ Размер:*\n" \
+                  f"└ {document_size}\n\n" \
+                  f"*🆔 ID инцидента:*\n" \
+                  f"└ {incident_ID}\n\n" \
                   f"#alertcenter #messengers \n\n"
     case "29":
         message = f"*🚨 AlertCenter Incident 🚨*\n\n" \
-                  f"*{alert_name} обнаружено на {intercept_PCname}*\n\n" \
-                  f"*Отправитель:* {intercept_user}\n\n" \
-                  f"*Получатель:* {to_addr}\n\n" \
-                  f"*Имя документа:* {document_name}\n\n" \
-                  f"*Расширение:* {document_ext}\n\n" \
-                  f"*Размер:* {document_size}\n\n" \
-                  f"*ID инцидента:* {incident_ID}\n\n" \
+                  f"*❗ {alert_name} обнаружено ❗*\n\n" \
+                  f"*💻 Имя хоста:*\n" \
+                  f"└ {intercept_PCname_caps}\n\n" \
+                  f"*📧 Отправитель:*\n" \
+                  f"└ {intercept_user} \n\n" \
+                  f"*📨 Получатель:*\n" \
+                  f"└ {to_addr}\n\n" \
+                  f"*📄 Имя документа:*\n" \
+                  f"└ {document_name}\n\n" \
+                  f"*💠 Расширение:*\n" \
+                  f"└ {document_ext}\n\n" \
+                  f"*↗️ Размер:*\n" \
+                  f"└ {document_size}\n\n" \
+                  f"*🆔 ID инцидента:*\n" \
+                  f"└ {incident_ID}\n\n" \
                   f"#alertcenter #cloud \n\n"
     case "34":
         message = f"*🚨 AlertCenter Incident 🚨*\n\n" \
-                  f"*{alert_name} обнаружено на {intercept_PCname}*\n\n" \
-                  f"*Отправитель:* {intercept_user}\n\n" \
-                  f"*Получатель:* {to_addr}\n\n" \
-                  f"*Имя документа:* {document_name}\n\n" \
-                  f"*Расширение:* {document_ext}\n\n" \
-                  f"*Размер:* {document_size}\n\n" \
-                  f"*ID инцидента:* {incident_ID}\n\n" \
+                  f"*❗ {alert_name} обнаружено ❗*\n\n" \
+                  f"*💻 Имя хоста:*\n" \
+                  f"└ {intercept_PCname_caps}\n\n" \
+                  f"*📧 Отправитель:*\n" \
+                  f"└ {intercept_user} \n\n" \
+                  f"*📨 Получатель:*\n" \
+                  f"└ {to_addr}\n\n" \
+                  f"*📄 Имя документа:*\n" \
+                  f"└ {document_name}\n\n" \
+                  f"*💠 Расширение:*\n" \
+                  f"└ {document_ext}\n\n" \
+                  f"*↗️ Размер:*\n" \
+                  f"└ {document_size}\n\n" \
+                  f"*🆔 ID инцидента:*\n" \
+                  f"└ {incident_ID}\n\n" \
                   f"#alertcenter #fired \n\n"
     case _:
         pass
@@ -185,19 +245,27 @@ match alert_group_ID:
 match vuln_severity:
     case 'Critical':
         message = f"*🚨 Critical Vulnerability Alert 🚨*\n\n" \
-                  f"*Критическая уязвимость обнаружена на {agent}*\n\n" \
-                  f"*CVE:* {vuln_CVE}\n\n" \
-                  f"*Уязвимый модуль:* {vuln_package} {vuln_version}\n\n" \
-                  f"*Описание:* {vuln_title}\n\n" \
-                  f"*Подробнее:* {vuln_reference}\n\n" \
+                  f"*❗ Критическая уязвимость обнаружена на {agent} ❗*\n\n" \
+                  f"*#️⃣ CVE:*\n" \
+                  f"└ {vuln_CVE}\n\n" \
+                  f"*🔧 Уязвимый модуль:*\n" \
+                  f"└ {vuln_package} {vuln_version}\n\n" \
+                  f"*📄 Описание:*\n" \
+                  f"└ {vuln_title}\n\n" \
+                  f"*📑 Подробнее:*\n" \
+                  f"└ {vuln_reference}\n\n" \
                   f"#vulnerability #critical \n\n"
     case 'High':
-        message = f"*🚨 High Vulnerability Alert 🚨*\n\n" \
-                  f"*Уязвимость высокой степени обнаружена на {agent}*\n\n" \
-                  f"*CVE:* {vuln_CVE}\n\n" \
-                  f"*Уязвимый модуль:* {vuln_package} {vuln_version}\n\n" \
-                  f"*Описание:* {vuln_title}\n\n" \
-                  f"*Подробнее:* {vuln_reference}\n\n" \
+        message = f"*🚨 Critical Vulnerability Alert 🚨*\n\n" \
+                  f"*❗ Критическая уязвимость обнаружена на {agent} ❗*\n\n" \
+                  f"*#️⃣ CVE:*\n" \
+                  f"└ {vuln_CVE}\n\n" \
+                  f"*🔧 Уязвимый модуль:*\n" \
+                  f"└ {vuln_package} {vuln_version}\n\n" \
+                  f"*📄 Описание:*\n" \
+                  f"└ {vuln_title}\n\n" \
+                  f"*📑 Подробнее:*\n" \
+                  f"└ {vuln_reference}\n\n" \
                   f"#vulnerability #high \n\n"
     case _:
         pass
